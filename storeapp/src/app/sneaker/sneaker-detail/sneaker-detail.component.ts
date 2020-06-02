@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SneakerDataService } from '../dataServices/sneaker-data.service';
 import { Sneaker } from '../models/sneaker.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
+import { AuthenticationService } from '../../user/authentication.service';
 
 
 
@@ -24,6 +24,7 @@ export class SneakerDetailComponent implements OnInit {
     private router: Router,
     private sneakerDataService: SneakerDataService,
     private _snackBar: MatSnackBar,
+    private auth: AuthenticationService
   ) { }
 
   ngOnInit(): void {
@@ -67,5 +68,9 @@ export class SneakerDetailComponent implements OnInit {
 
   sneakerImg(): string {
     return this.sneaker.name.replace(/[\s-]/g, "").toLowerCase() + this.sneaker.color.replace(/[\s-]/g, "").toLowerCase();
+  }
+
+  customer(): boolean{
+    return this.auth.user$.value.startsWith('admin');
   }
 }

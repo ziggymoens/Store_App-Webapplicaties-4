@@ -48,7 +48,7 @@
           </ngx-barcode6>
         </div>
       </div>
-      <mat-list-item>
+      <mat-list-item *ngIf="customer()">
         <a type='submit' mat-raised-button color="warn" (click)="deleteSneaker()"
           style="margin-bottom: 1em; width: 100%;">
           Delete
