@@ -1,0 +1,26 @@
+mat-form-field{
+    width: 75%;
+}
+mat-select{
+    width: 75%;
+}
+button{
+    margin-top: 1em;
+    width: 50%;
+}
+.submit{
+    background-color: lightcoral;
+}
+
+.submit:hover{
+    background-color: green;
+}
+.sneakerImg{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.buttonLarge{
+    width: 100%;
+}

@@ -1,0 +1,118 @@
+<div id="banner" style="height: 25vh;">
+  <div class="banner">
+    <div class="banner-head">
+      <h1>Sneakers</h1>
+      <h2>Sneaker Store</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row wrap">
+  <div fxFlex="0 0 calc(50%-0.5%)">
+    <mat-card class="topCard">
+      <mat-card-title>add sneaker</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="sneaker" (ngSubmit)='onSubmit()'>
+          <mat-form-field>
+            <input matInput aria-label="name" placeholder="name" type="text" formControlName="name" required
+              (click)="clearMessage()" #spy data-cy="name"/>
+            <mat-error *ngIf="sneaker.get('name')['errors'] && sneaker.get('name').touched">
+              {{ getErrorMessage(sneaker.get('name')['errors']) }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="color" aria-label="color name" type="text" formControlName="color" required
+              (click)="clearMessage()" data-cy="color"/>
+            <mat-error *ngIf="sneaker.get('color')['errors'] && sneaker.get('color').touched">
+              {{ getErrorMessage(sneaker.get('color')['errors']) }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="price" aria-label="price" type="number" formControlName="price" required
+              (click)="clearMessage()" data-cy="price"/>
+            <mat-error *ngIf="sneaker.get('price')['errors'] && sneaker.get('price').touched">
+              {{ getErrorMessage(sneaker.get('price')['errors']) }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="releaseDate" data-cy="releaseDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="barcode" aria-label="barcode" type="text" formControlName="barcode" required
+              (click)="clearMessage()" data-cy="barcode"/>
+            <mat-error *ngIf="sneaker.get('barcode')['errors'] && sneaker.get('barcode').touched">
+              {{ getErrorMessage(sneaker.get('barcode')['errors']) }}
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-select placeholder="brand" aria-label="brand name" formControlName="brand" required
+            (click)="clearMessage()" (selectionChange)="changeBrand($event.value)" data-cy="brand">
+            <mat-option *ngFor="let brand of brands$ | async" [value]="brand">
+              {{ brand.name }}
+            </mat-option>
+          </mat-select>
+          <br>
+          <button class="submit" type='submit' mat-raised-button [disabled]='!sneaker.valid' data-cy="submit">
+            add sneaker
+          </button>
+          <button (click)="clearForm()" mat-raised-button data-cy="reset">
+            Reset
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="error" *ngIf="errorMessage" data-cy="appError">
+      got an error while adding the sneaker: {{ errorMessage }}
+    </mat-card>
+    <mat-card class="confirmation" *ngIf="confirmationMessage" data-cy="appConfirmation">
+      {{ confirmationMessage }}
+      <br>
+      <button class="buttonLarge" type='submit' mat-raised-button [routerLink]="['../../sneaker/list/']">Return</button>
+    </mat-card>
+  </div>
+  <div fxFlex="0 0 calc(50%-0.5%)">
+    <mat-card class="preview topCard">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <img src="../../../assets/images/brands/{{sneakerBrandImg()!=''?sneakerBrandImg()+'.jpg':'default.png'}}"
+            onerror="this.onerror=null; this.src='../../../assets/images/brands/default.png'" style="max-width: 4em;" data-cy="imgBrand">
+        </div>
+        <mat-card-title style="margin-left: 2em;" data-cy="preview-name">
+          {{sneaker.value.name!=''&&sneaker.value.name!=null?sneaker.value.name:"name"}}
+        </mat-card-title>
+        <mat-card-subtitle style="margin-left: 3em;" data-cy="preview-brand">
+          {{selectedBrand!=''&&selectedBrand!=null?selectedBrand:"brand"}}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img class="sneakerImg" mat-card-image src="../../../assets/images/sneakers/default.png"
+        onerror="this.onerror=null; this.src='../../../assets/images/sneakers/default.png'">
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item data-cy="preview-releaseDate">
+            <mat-icon matListIcon>calendar_today</mat-icon>
+            <p>Released on
+              {{ sneaker.value.releaseDate==null?"January 1, 2020":sneaker.value.releaseDate | date: "longDate" }}</p>
+          </mat-list-item>
+          <mat-list-item data-cy="preview-color">
+            <mat-icon matListIcon>color_lens</mat-icon>
+            <p>Color: {{sneaker.value.color!=''&&sneaker.value.color!=null?sneaker.value.color:"unknown"}}</p>
+          </mat-list-item>
+          <mat-list-item data-cy="preview-price">
+            <mat-icon matListIcon>attach_money</mat-icon>
+            <p>Price: {{ sneaker.value.price==null?"$0.00":sneaker.value.price | currency }}</p>
+          </mat-list-item>
+          <ngx-barcode6 [bc-format]="'CODE128'" [bc-value]="sneaker.value.barcode" [bc-display-value]="true" data-cy="preview-barcode">
+          </ngx-barcode6>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

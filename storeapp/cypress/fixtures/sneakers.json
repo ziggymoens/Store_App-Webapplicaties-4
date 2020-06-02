@@ -1,0 +1,380 @@
+[
+    {
+      "id": 1,
+      "name": "Jordan 1 Retro High Court",
+      "price": 170,
+      "color": "Purple & White",
+      "brand": {
+        "name": "Air Jordan"
+      },
+      "releaseDate": "04/11/2020 00:00:00",
+      "stock": [
+        {
+          "amount": 3,
+          "size": 42
+        },
+        {
+          "amount": 3,
+          "size": 38
+        },
+        {
+          "amount": 3,
+          "size": 41
+        },
+        {
+          "amount": 2,
+          "size": 39
+        },
+        {
+          "amount": 1,
+          "size": 46
+        },
+        {
+          "amount": 1,
+          "size": 40
+        },
+        {
+          "amount": 2,
+          "size": 44
+        },
+        {
+          "amount": 2,
+          "size": 43
+        },
+        {
+          "amount": 1,
+          "size": 37
+        },
+        {
+          "amount": 1,
+          "size": 36
+        },
+        {
+          "amount": 1,
+          "size": 45
+        }
+      ],
+      "barcode": "555088-500",
+      "onlineImg": null
+    },
+    {
+      "id": 2,
+      "name": "Yeezy 350 V2",
+      "price": 220,
+      "color": "Zebra",
+      "brand": {
+        "name": "Adidas"
+      },
+      "releaseDate": "02/25/2017 00:00:00",
+      "stock": [
+        {
+          "amount": 2,
+          "size": 38
+        },
+        {
+          "amount": 1,
+          "size": 44
+        },
+        {
+          "amount": 4,
+          "size": 37
+        },
+        {
+          "amount": 2,
+          "size": 46
+        },
+        {
+          "amount": 2,
+          "size": 36
+        },
+        {
+          "amount": 3,
+          "size": 45
+        },
+        {
+          "amount": 2,
+          "size": 42
+        },
+        {
+          "amount": 1,
+          "size": 43
+        },
+        {
+          "amount": 2,
+          "size": 41
+        },
+        {
+          "amount": 1,
+          "size": 40
+        }
+      ],
+      "barcode": "CP9654",
+      "onlineImg": null
+    },
+    {
+      "id": 3,
+      "name": "Yeezy Slide",
+      "price": 55,
+      "color": "Bone",
+      "brand": {
+        "name": "Adidas"
+      },
+      "releaseDate": "12/06/2019 00:00:00",
+      "stock": [
+        {
+          "amount": 2,
+          "size": 46
+        },
+        {
+          "amount": 1,
+          "size": 36
+        },
+        {
+          "amount": 1,
+          "size": 43
+        },
+        {
+          "amount": 3,
+          "size": 38
+        },
+        {
+          "amount": 2,
+          "size": 39
+        },
+        {
+          "amount": 3,
+          "size": 42
+        },
+        {
+          "amount": 3,
+          "size": 37
+        },
+        {
+          "amount": 1,
+          "size": 44
+        },
+        {
+          "amount": 3,
+          "size": 45
+        },
+        {
+          "amount": 1,
+          "size": 40
+        }
+      ],
+      "barcode": "FW6345",
+      "onlineImg": null
+    },
+    {
+      "id": 4,
+      "name": "Yeezy 350 V2",
+      "price": 220,
+      "color": "Black",
+      "brand": {
+        "name": "Adidas"
+      },
+      "releaseDate": "06/07/2020 00:00:00",
+      "stock": [
+        {
+          "amount": 2,
+          "size": 41
+        },
+        {
+          "amount": 2,
+          "size": 40
+        },
+        {
+          "amount": 1,
+          "size": 42
+        },
+        {
+          "amount": 1,
+          "size": 39
+        },
+        {
+          "amount": 2,
+          "size": 43
+        },
+        {
+          "amount": 3,
+          "size": 36
+        },
+        {
+          "amount": 2,
+          "size": 37
+        },
+        {
+          "amount": 3,
+          "size": 44
+        },
+        {
+          "amount": 2,
+          "size": 45
+        },
+        {
+          "amount": 2,
+          "size": 38
+        }
+      ],
+      "barcode": "FY5158",
+      "onlineImg": null
+    },
+    {
+      "id": 5,
+      "name": "Supreme x Nike Air Force 1 Low",
+      "price": 96,
+      "color": "Black",
+      "brand": {
+        "name": "Supreme"
+      },
+      "releaseDate": "03/05/2020 00:00:00",
+      "stock": [
+        {
+          "amount": 5,
+          "size": 40
+        },
+        {
+          "amount": 1,
+          "size": 44
+        },
+        {
+          "amount": 1,
+          "size": 42
+        },
+        {
+          "amount": 1,
+          "size": 38
+        },
+        {
+          "amount": 3,
+          "size": 37
+        },
+        {
+          "amount": 2,
+          "size": 41
+        },
+        {
+          "amount": 2,
+          "size": 39
+        },
+        {
+          "amount": 3,
+          "size": 46
+        },
+        {
+          "amount": 2,
+          "size": 36
+        }
+      ],
+      "barcode": "CU9225-001",
+      "onlineImg": null
+    },
+    {
+      "id": 6,
+      "name": "Supreme x Nike Air Force 1 Low",
+      "price": 96,
+      "color": "White",
+      "brand": {
+        "name": "Supreme"
+      },
+      "releaseDate": "03/05/2020 00:00:00",
+      "stock": [
+        {
+          "amount": 3,
+          "size": 45
+        },
+        {
+          "amount": 1,
+          "size": 46
+        },
+        {
+          "amount": 2,
+          "size": 38
+        },
+        {
+          "amount": 3,
+          "size": 42
+        },
+        {
+          "amount": 1,
+          "size": 37
+        },
+        {
+          "amount": 1,
+          "size": 40
+        },
+        {
+          "amount": 1,
+          "size": 44
+        },
+        {
+          "amount": 3,
+          "size": 39
+        },
+        {
+          "amount": 3,
+          "size": 41
+        },
+        {
+          "amount": 1,
+          "size": 36
+        },
+        {
+          "amount": 1,
+          "size": 43
+        }
+      ],
+      "barcode": "CU9225-100",
+      "onlineImg": null
+    },
+    {
+      "id": 7,
+      "name": "Jordan 5 Retro",
+      "price": 225,
+      "color": "Black",
+      "brand": {
+        "name": "Off-White"
+      },
+      "releaseDate": "02/15/2020 00:00:00",
+      "stock": [
+        {
+          "amount": 1,
+          "size": 37
+        },
+        {
+          "amount": 1,
+          "size": 44
+        },
+        {
+          "amount": 5,
+          "size": 45
+        },
+        {
+          "amount": 1,
+          "size": 43
+        },
+        {
+          "amount": 3,
+          "size": 41
+        },
+        {
+          "amount": 3,
+          "size": 46
+        },
+        {
+          "amount": 2,
+          "size": 42
+        },
+        {
+          "amount": 3,
+          "size": 40
+        },
+        {
+          "amount": 1,
+          "size": 39
+        }
+      ],
+      "barcode": "CT8480-001",
+      "onlineImg": null
+    }
+  ]

@@ -1,0 +1,31 @@
+<div id="banner">
+  <div class="banner">
+    <div class="banner-head">
+      <h1>About</h1>
+      <h2>Sneaker Store</h2>
+    </div>
+    <a href="mailto:ziggymoens@hotmail.com?subject=Contact%20form">Email us</a>
+  </div>
+</div>
+
+
+<google-map
+  height="500px"
+  width="100%"
+  [zoom]="zoom"
+  [center]="center"
+  [options]="options"
+>
+  <map-marker
+    #markerElem
+    *ngFor="let marker of markers"
+    [position]="marker.position"
+    [label]="marker.label"
+    [title]="marker.title"
+    [options]="marker.options"
+    (mapClick)="openInfo(markerElem, marker.info)"
+  >
+  </map-marker>
+
+  <map-info-window>{{ infoContent }}</map-info-window>
+</google-map>

@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container" style="position: relative; z-index: 10;">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['sneaker/list']">Sneakers</a>
+      <a mat-list-item [routerLink]="['sneaker/add']">Add sneaker</a>
+      <a mat-list-item [routerLink]="['sneaker/scan']">Scan sneaker</a>
+      <a mat-list-item [routerLink]="['about']">About</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="position: relative; z-index: 10;">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Sneaker Store</span>
+      <span class="fill-space"></span>
+      <span *ngIf="loggedInUser$ | async as user; else loginTemplate">
+        {{ user }}
+        <button (click)="logout()" mat-flat-button>
+          logout
+        </button>
+      </span>
+      <ng-template #loginTemplate>
+        <span>
+          <button (click)="login()" mat-flat-button>
+            <mat-icon>face</mat-icon>login
+          </button>
+        </span>
+      </ng-template>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

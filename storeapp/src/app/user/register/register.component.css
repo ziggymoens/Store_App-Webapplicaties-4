@@ -1,0 +1,11 @@
+mat-form-field{
+    width: 75%;
+}
+.name{
+    width: 36.5%;
+}
+
+button{
+    width: 50%;
+    margin: 0.5em;;
+}

@@ -1,0 +1,30 @@
+<mat-card style="margin: 0.2em;">
+  <mat-card-header>
+  <mat-card-title style="text-align: center;">
+    {{sneaker.name}}
+  </mat-card-title>
+  <mat-card-subtitle>
+    <app-brand [brand]="sneaker.brand"></app-brand>
+  </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon matListIcon>calendar_today</mat-icon>
+        <p>Released on {{ sneaker.releaseDate | date: "longDate" }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>color_lens</mat-icon>
+        <p>Color: {{ sneaker.color }}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>attach_money</mat-icon>
+        <p>Price: {{ sneaker.price | currency }}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-footer fxLayoutAlign="center">
+    <button type='submit' mat-raised-button [routerLink]="['../../sneaker/detail/', sneaker.id]" style="margin: 0.3em; width: 100%; display: block;">Details <mat-icon matListIcon>more_horiz</mat-icon></button>
+    <!--<button (click)='deleteSneaker()' mat-raised-button style="margin: 0.3em; width: 100%; display: block;">Delete <mat-icon matListIcon>more_horiz</mat-icon></button>-->
+  </mat-card-footer>
+</mat-card>

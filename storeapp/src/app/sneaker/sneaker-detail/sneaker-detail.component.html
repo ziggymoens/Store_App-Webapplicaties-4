@@ -1,0 +1,74 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img src="../../../assets/images/brands/{{sneakerBrandImg()}}.jpg"
+        onerror="this.onerror=null; this.src='../../../assets/images/sneakers/default.png'" style="max-width: 4em;">
+    </div>
+    <mat-card-title style="margin-left: 2em;">
+      {{sneaker.name}}
+    </mat-card-title>
+    <mat-card-subtitle style="margin-left: 3em;">
+      <app-brand [brand]="sneaker.brand"></app-brand>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <!--
+  <div *ngFor="let img of images; let i = index">
+    <div *ngIf="currentImg == i">
+      <img mat-card-image src="../../../assets/images/sneakers/{{sneakerImg()}}/photo{{i}}.jpg"
+        onerror="this.onerror=null; this.src='../../../assets/images/sneakers/default.png'">
+    </div>
+  </div>
+  <button type='buttonC' mat-raised-button color="" (click)="prevImg()">
+    Previous
+  </button>
+  <button type='buttonC' mat-raised-button color="" (click)="nextImg()">
+    Next
+  </button>
+-->
+  <mat-card-content>
+    <mat-list>
+      <div>
+        <div fxFlex="0 0 calc(50%-0.5%)">
+          <mat-list-item>
+            <mat-icon matListIcon>calendar_today</mat-icon>
+            <p>Released on {{ sneaker.releaseDate | date: "longDate" }}</p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>color_lens</mat-icon>
+            <p>Color: {{ sneaker.color }}</p>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListIcon>attach_money</mat-icon>
+            <p>Price: {{ sneaker.price | currency }}</p>
+          </mat-list-item>
+        </div>
+        <div fxFlex="0 0 calc(50%-0.5%)">
+          <ngx-barcode6 [bc-format]="'CODE128'" [bc-value]="sneaker.barcode" [bc-display-value]="true">
+          </ngx-barcode6>
+        </div>
+      </div>
+      <mat-list-item>
+        <a type='submit' mat-raised-button color="warn" (click)="deleteSneaker()"
+          style="margin-bottom: 1em; width: 100%;">
+          Delete
+        </a>
+      </mat-list-item>
+    </mat-list>
+    <app-stock-sales [stock]="sneaker.stock"></app-stock-sales>
+  </mat-card-content>
+  <mat-card-footer>
+    <div>
+      <mat-card style="min-height: 30%; max-height: 30%;">
+        <mat-slider min="1" max="35" step="1" [(ngModel)]="value"></mat-slider>
+        <div *ngFor="let img of imgs; let i = index">
+          <div *ngIf="value == i">
+            <img mat-card-image style="margin-top: 1em;" src="https://stockx-360.imgix.net/{{sneaker.onlineImg}}/Images/{{sneaker.onlineImg}}/Lv2/img{{this.value.toString().padStart(2, '0')}}.jpg?auto=format"
+              onerror="this.onerror=null; this.src='../../../assets/images/sneakers/default.png'">
+          </div>
+        </div>
+        
+      </mat-card>
+    </div>
+  </mat-card-footer>
+</mat-card>
